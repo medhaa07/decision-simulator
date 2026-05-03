@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentia AI | Decision Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated Background Blobs -->
+<div class="bg-container">
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-blue"></div>
+</div>
+
+<nav class="navbar">
+    <div class="logo">SENTIA<span>.AI</span></div>
+    <div class="nav-menu">
+        <a href="#">Solutions</a>
+        <a href="#">Platform</a>
+        <button class="nav-btn">Request Demo</button>
+    </div>
+</nav>
+
+<header class="hero">
+    <span class="badge">Next-Gen Analytics</span>
+    <h1>Decision Intelligence</h1>
+    <p>Moving beyond dashboards. Simulate scenarios and optimize outcomes with predictive modeling.</p>
+</header>
+
+<main class="dashboard">
+    <!-- Section 1: Upload -->
+    <div class="glass-card">
+        <div class="card-num">01</div>
+        <h2>Data Acquisition</h2>
+        <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+            <input type="file" id="fileInput" hidden>
+            <div class="icon">📂</div>
+            <p>Drag dataset or <span>browse files</span></p>
+        </div>
+        <button class="btn primary" onclick="uploadFile(this)">Process Dataset</button>
+    </div>
+
+    <!-- Section 2: Train -->
+    <div class="glass-card">
+        <div class="card-num">02</div>
+        <h2>Pattern Recognition</h2>
+        <div class="input-group">
+            <label>Target Variable</label>
+            <input type="text" id="target" placeholder="e.g., Monthly_Revenue">
+        </div>
+        <button class="btn secondary" onclick="trainModel(this)">Initialize Training</button>
+    </div>
+
+    <!-- Section 3: Simulate -->
+    <div class="glass-card featured">
+        <div class="card-num">03</div>
+        <h2>Simulation Engine</h2>
+        <div class="input-row">
+            <input type="number" id="f1" placeholder="Variable A">
+            <input type="number" id="f2" placeholder="Variable B">
+        </div>
+        <button class="btn action" onclick="runSimulation(this)">Run Simulation</button>
+        <div class="result-box" id="resultBox">
+            <span class="res-label">Current Prediction</span>
+            <div class="res-value" id="simValue">--</div>
+            <div class="res-conf">Confidence Score: 94.2%</div>
+        </div>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
